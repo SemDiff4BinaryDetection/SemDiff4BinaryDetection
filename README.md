@@ -12,7 +12,7 @@ This module is in the compare_sim folder
 First of all, this is a plugin for IDA pro. Make sure you install IDA pro first. We implemented on IDA pro 7.5 SP3 in Windows. Thus this plugin works for this version.
 We haven't tested on other versions of IDA pro.
 
-open up the binary_similarity.cpp file, change the path you want to generate symbolic expression files as path1.
+open up the binary_similarity.cpp file, change the path you want to generate symbolic expression files at. We call this path as path1.
 
 Then open up idasdkandtools_ida7.5hello.sln, build it. Once successful, you will find semdiff64.dll for IDA pro 64 under symbolic_engine\x64\Debug. By default we 
 implement for IDA pro 64. If you want to build for IDA pro 32, you can select x64/x86 under Configuration Manager in Visual Studio.
