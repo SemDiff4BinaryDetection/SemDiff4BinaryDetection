@@ -9,7 +9,7 @@ This module is in the compare_sim folder
 
 ### Installation
 
-First of all, this is a plugin for IDA pro. Make sure you install IDA pro first. We implemented on IDA pro 7.5 SP3. Thus this plugin works for this version.
+First of all, this is a plugin for IDA pro. Make sure you install IDA pro first. We implemented on IDA pro 7.5 SP3 in Windows. Thus this plugin works for this version.
 We haven't tested on other versions of IDA pro.
 
 open up the binary_similarity.cpp file, change the path you want to generate symbolic expression files as path1.
