@@ -1,0 +1,3 @@
+C:\Program Files\IDA Pro 7.5 SP3\IDA SDK and Tools\idasdk75\plugins\semdiff\deep first\x64\Debug\semdiff.pdb
+C:\Program Files\IDA Pro 7.5 SP3\IDA SDK and Tools\idasdk75\plugins\semdiff\New folder\symbolic_engine\x64\Debug\semdiff.pdb
+C:\Program Files\IDA Pro 7.5 SP3\IDA SDK and Tools\idasdk75\plugins\semdiff\semdiff\symbolic_engine\x64\Debug\semdiff.pdb

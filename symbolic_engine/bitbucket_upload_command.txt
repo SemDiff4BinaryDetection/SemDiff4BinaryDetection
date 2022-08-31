@@ -1,0 +1,57 @@
+configuration in VS when compiling the code:
+
+$(SolutionDir)$(Platform)\$(Configuration)\
+
+
+$(OutDir)$(ProjectName)64.dll
+
+
+
+git command:
+
+git config --global user.name "zian liu (data61, dockland)"
+git config --global user.email "zian.liu@data61.csiro.au"
+
+at the bitbucket page, click "clone" on the left hand side panel,paste the url.
+
+Then on your computer, on terminal, if first time to use:
+cd exising-project
+git init
+git add --all
+git commit -m "initlal commit"
+git remote add origin url
+git push -u origin master
+
+
+browser to https://confluence.csiro.au/display/DSS/DSS+students+IP can view the source code
+if you want to update the remote repository: (url=https://bitbucket.csiro.au/scm/dsssip/zian-liu.git)
+cd existing-project
+git remote set-url origin url
+git commit -m "some comments"
+git push -u origin --all
+git push origin --tags
+
+if you want to merge two repositories with different histories, first pull the remote repositiry,
+then push the new repository. To pull the remote one and combine it within the current one:
+git pull url --allow-unrelated-histories
+
+To see the repository:
+git ls-tree -r master
+
+or:
+
+git ls-files
+
+to delete a file, firstly delete in local repository, then update to remote.
+To delete locally:
+
+git rm -rf file
+
+then:
+
+git commit -m "some comments"
+
+now you can check the file is deleted by using the ls command, then:
+
+git push -u origin --all
+git push origin --tags

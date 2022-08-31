@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Headers\cross_arch_preprocessor\ARM_preprocessor.h" />
+    <ClInclude Include="Headers\cross_arch_preprocessor\x64_preprocessor.h" />
+    <ClInclude Include="Headers\IR\ARM_IR.h" />
+    <ClInclude Include="Headers\IR\ARM_IR_call_handler.h" />
+    <ClInclude Include="Headers\IR\ARM_IR_iterator.h" />
+    <ClInclude Include="Headers\IR\ARM_IR_mov_handler.h" />
+    <ClInclude Include="Headers\IR\x64_IR.h" />
+    <ClInclude Include="Headers\IR\x64_IR_call_handler.h" />
+    <ClInclude Include="Headers\IR\x64_IR_iterator.h" />
+    <ClInclude Include="Headers\IR\x64_IR_mov_handler.h" />
+    <ClInclude Include="Headers\value_calculate\ARM_iterator_propagate_handler.h" />
+    <ClInclude Include="Headers\value_calculate\ARM_mylibrary.h" />
+    <ClInclude Include="Headers\value_calculate\ARM_mylibrary_wheel.h" />
+    <ClInclude Include="Headers\value_calculate\ARM_my_library_operator.h" />
+    <ClInclude Include="Headers\value_calculate\ARM_update.h" />
+    <ClInclude Include="Headers\value_calculate\ARM_while_handler.h" />
+    <ClInclude Include="Headers\value_calculate\common_library.h" />
+    <ClInclude Include="Headers\value_calculate\x64_iterator_propagate_handler.h" />
+    <ClInclude Include="Headers\value_calculate\x64_mylibrary.h" />
+    <ClInclude Include="Headers\value_calculate\x64_mylibrary_operator.h" />
+    <ClInclude Include="Headers\value_calculate\x64_mylibrary_register.h" />
+    <ClInclude Include="Headers\value_calculate\x64_mylibrary_wheel.h" />
+    <ClInclude Include="Headers\value_calculate\x64_update.h" />
+    <ClInclude Include="Headers\value_calculate\x64_while_handler.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="binary_similarity.cpp" />
+    <ClCompile Include="Source\cross_arch_preprocessor\ARM_preprocessor.cpp" />
+    <ClCompile Include="Source\cross_arch_preprocessor\x64_preprocessor.cpp" />
+    <ClCompile Include="Source\IR\ARM_IR.cpp" />
+    <ClCompile Include="Source\IR\ARM_IR_call_handler.cpp" />
+    <ClCompile Include="Source\IR\ARM_IR_iterator.cpp" />
+    <ClCompile Include="Source\IR\ARM_IR_mov_handler.cpp" />
+    <ClCompile Include="Source\IR\x64_IR.cpp" />
+    <ClCompile Include="Source\IR\x64_IR_call_handler.cpp" />
+    <ClCompile Include="Source\IR\x64_IR_iterator.cpp" />
+    <ClCompile Include="Source\IR\x64_IR_mov_handler.cpp" />
+    <ClCompile Include="Source\value_calculate\ARM_iterator_propagate_handler.cpp" />
+    <ClCompile Include="Source\value_calculate\ARM_mylibrary.cpp" />
+    <ClCompile Include="Source\value_calculate\ARM_mylibrary_wheel.cpp" />
+    <ClCompile Include="Source\value_calculate\ARM_my_library_operator.cpp" />
+    <ClCompile Include="Source\value_calculate\ARM_update.cpp" />
+    <ClCompile Include="Source\value_calculate\ARM_while_handler.cpp" />
+    <ClCompile Include="Source\value_calculate\common_library.cpp" />
+    <ClCompile Include="Source\value_calculate\x64_iterator_propagate_handler.cpp" />
+    <ClCompile Include="Source\value_calculate\x64_mylibrary.cpp" />
+    <ClCompile Include="Source\value_calculate\x64_mylibrary_operator.cpp" />
+    <ClCompile Include="Source\value_calculate\x64_mylibrary_register.cpp" />
+    <ClCompile Include="Source\value_calculate\x64_mylibrary_wheel.cpp" />
+    <ClCompile Include="Source\value_calculate\x64_update.cpp" />
+    <ClCompile Include="Source\value_calculate\x64_while_handler.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{43991842-5F61-4EFD-B92C-B7A9BD177EC7}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>semdiff</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Program Files\IDA Pro 7.5 SP3\IDA SDK and Tools\idasdk75\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__NT__;__EA64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(ProjectName)64.dll</OutputFile>
+    </Link>
+    <Link>
+      <AdditionalLibraryDirectories>C:\Program Files\IDA Pro 7.5 SP3\IDA SDK and Tools\idasdk75\lib\x64_win_vc_64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>C:\Program Files\IDA Pro 7.5 SP3\IDA SDK and Tools\idasdk75\lib\x64_win_vc_64\ida.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/EXPORT:PLUGIN %(AdditionalOptions)</AdditionalOptions>
+      <HeapReserveSize>
+      </HeapReserveSize>
+      <HeapCommitSize>
+      </HeapCommitSize>
+      <StackReserveSize>0x10000000</StackReserveSize>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

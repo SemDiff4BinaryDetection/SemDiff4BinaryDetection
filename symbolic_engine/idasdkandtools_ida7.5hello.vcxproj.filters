@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Header Files\IR">
+      <UniqueIdentifier>{83cb7fbd-c515-4c39-a32c-3329de949364}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\value_calculate">
+      <UniqueIdentifier>{00dc03ff-c2a3-403c-83a3-4c6ea80c2202}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\IR">
+      <UniqueIdentifier>{a03d06ba-20d1-495c-b2f2-2dea1d0d3708}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\value_calculate">
+      <UniqueIdentifier>{eb2522d7-859b-4212-852d-a720f8548e55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\cross_arch_preprocessor">
+      <UniqueIdentifier>{6c2e9fb8-4b1b-4c39-964c-c5ec7e9de45c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\cross_arch_preprocessor">
+      <UniqueIdentifier>{3effe368-f81d-4156-a034-6d82277b8802}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\value_calculate\x64">
+      <UniqueIdentifier>{bf374323-8c50-463e-aad4-252727d2c7f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\value_calculate\ARM">
+      <UniqueIdentifier>{d2be96db-e708-4ee8-80d7-c796ac8d0b00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\value_calculate\x64">
+      <UniqueIdentifier>{f111bd73-dca3-4569-ab8a-6fd94435e66a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\value_calculate\ARM">
+      <UniqueIdentifier>{4c52ab12-27bc-4085-a1bb-3b3dfacb3d67}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Headers\cross_arch_preprocessor\x64_preprocessor.h">
+      <Filter>Header Files\cross_arch_preprocessor</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\cross_arch_preprocessor\ARM_preprocessor.h">
+      <Filter>Header Files\cross_arch_preprocessor</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\IR\x64_IR.h">
+      <Filter>Header Files\IR</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\IR\x64_IR_call_handler.h">
+      <Filter>Header Files\IR</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\IR\x64_IR_mov_handler.h">
+      <Filter>Header Files\IR</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\value_calculate\x64_iterator_propagate_handler.h">
+      <Filter>Header Files\value_calculate\x64</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\value_calculate\x64_mylibrary.h">
+      <Filter>Header Files\value_calculate\x64</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\value_calculate\x64_mylibrary_operator.h">
+      <Filter>Header Files\value_calculate\x64</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\value_calculate\x64_mylibrary_register.h">
+      <Filter>Header Files\value_calculate\x64</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\value_calculate\x64_mylibrary_wheel.h">
+      <Filter>Header Files\value_calculate\x64</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\value_calculate\x64_update.h">
+      <Filter>Header Files\value_calculate\x64</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\value_calculate\x64_while_handler.h">
+      <Filter>Header Files\value_calculate\x64</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\value_calculate\ARM_iterator_propagate_handler.h">
+      <Filter>Header Files\value_calculate\ARM</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\value_calculate\ARM_my_library_operator.h">
+      <Filter>Header Files\value_calculate\ARM</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\value_calculate\ARM_mylibrary.h">
+      <Filter>Header Files\value_calculate\ARM</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\value_calculate\ARM_mylibrary_wheel.h">
+      <Filter>Header Files\value_calculate\ARM</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\value_calculate\ARM_update.h">
+      <Filter>Header Files\value_calculate\ARM</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\value_calculate\ARM_while_handler.h">
+      <Filter>Header Files\value_calculate\ARM</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\IR\ARM_IR.h">
+      <Filter>Header Files\IR</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\IR\ARM_IR_call_handler.h">
+      <Filter>Header Files\IR</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\IR\ARM_IR_mov_handler.h">
+      <Filter>Header Files\IR</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\value_calculate\common_library.h">
+      <Filter>Header Files\value_calculate</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\IR\x64_IR_iterator.h">
+      <Filter>Header Files\IR</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\IR\ARM_IR_iterator.h">
+      <Filter>Header Files\IR</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="binary_similarity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\cross_arch_preprocessor\x64_preprocessor.cpp">
+      <Filter>Source Files\cross_arch_preprocessor</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\cross_arch_preprocessor\ARM_preprocessor.cpp">
+      <Filter>Source Files\cross_arch_preprocessor</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\value_calculate\x64_iterator_propagate_handler.cpp">
+      <Filter>Source Files\value_calculate\x64</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\value_calculate\x64_mylibrary.cpp">
+      <Filter>Source Files\value_calculate\x64</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\value_calculate\x64_mylibrary_operator.cpp">
+      <Filter>Source Files\value_calculate\x64</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\value_calculate\x64_mylibrary_register.cpp">
+      <Filter>Source Files\value_calculate\x64</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\value_calculate\x64_mylibrary_wheel.cpp">
+      <Filter>Source Files\value_calculate\x64</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\value_calculate\x64_update.cpp">
+      <Filter>Source Files\value_calculate\x64</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\value_calculate\x64_while_handler.cpp">
+      <Filter>Source Files\value_calculate\x64</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\value_calculate\ARM_iterator_propagate_handler.cpp">
+      <Filter>Source Files\value_calculate\ARM</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\value_calculate\ARM_my_library_operator.cpp">
+      <Filter>Source Files\value_calculate\ARM</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\value_calculate\ARM_mylibrary.cpp">
+      <Filter>Source Files\value_calculate\ARM</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\value_calculate\ARM_mylibrary_wheel.cpp">
+      <Filter>Source Files\value_calculate\ARM</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\value_calculate\ARM_update.cpp">
+      <Filter>Source Files\value_calculate\ARM</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\value_calculate\ARM_while_handler.cpp">
+      <Filter>Source Files\value_calculate\ARM</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IR\x64_IR.cpp">
+      <Filter>Source Files\IR</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IR\x64_IR_call_handler.cpp">
+      <Filter>Source Files\IR</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IR\x64_IR_mov_handler.cpp">
+      <Filter>Source Files\IR</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IR\ARM_IR.cpp">
+      <Filter>Source Files\IR</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IR\ARM_IR_call_handler.cpp">
+      <Filter>Source Files\IR</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IR\ARM_IR_mov_handler.cpp">
+      <Filter>Source Files\IR</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\value_calculate\common_library.cpp">
+      <Filter>Source Files\value_calculate</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IR\x64_IR_iterator.cpp">
+      <Filter>Source Files\IR</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IR\ARM_IR_iterator.cpp">
+      <Filter>Source Files\IR</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
