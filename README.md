@@ -26,12 +26,12 @@ You also need to install msynth and miasm for python.
 ##### Graph Generation
 
 Once open IDA pro and load the binary, under plugin you can find the "binary similarity detection" or press F8. Click this button, then current binary's symbolic
-files will be generated under the path you changed for "working_path". A folder with the name same as the binary loaded will be generated in the "working_path". Within the folder is a list of folders which are named by each functions in the binary. For each function, we output a 0_output.txt file recording the symbolic expressions and a IR_output.txt file recording the control flow. The 0_output.txt contains the symbolic formula that can be very complex. To simplify it, run compare_sim/write_IR.py. This generates IR_output1.txt and IR_output1_simplified.pickle, which represent the symplified key instructions.
+files will be generated under the path you changed for "working_path". A folder with the name same as the binary loaded will be generated in the "working_path". Within the folder is a list of folders which are named by each functions in the binary. For each function, we output a 0_output.txt file recording the symbolic expressions and a IR_output.txt file recording the control flow. The 0_output.txt contains the symbolic formula that can be very complex. To simplify it, run compare_sim/write_IR.py. This generates a IR_output1.txt and a IR_output1_simplified.pickle for each function, which represent the symplified key instructions.
 
 
 
 ##### Graph Diffing
-Run compare_sim/IR_graphcheck_IRs_similarity.py and input two binaries you want to check similarity. This will output a sim.txt file under each function folder. 
+Run compare_sim/IR_graphcheck_IRs_similarity.py and input two binaries you want to check similarity against each other. This will output a sim.txt file under each function folder. 
 Then extract functions with at least 5 blocks (If you have Asm2vec, you can extract the same functions as Asm2vec through  copy_same_files function in compare_sim/check_output/).
 
 Lastly, check precision@1 score by running main function in compare_sim/check_output/ .
