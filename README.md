@@ -2,10 +2,10 @@
 SemDiff contains two modules, graph generation and graph diffing
 
 ### Graph Generation
-This module is in the symbolic_engine folder
+This module include all the symbolic_engine folder, compare_sim/write_IR.py, and compare_sim/IR_graph/check_IRs_similarity.py.
 
 ### Graph Diffing 
-This module is in the compare_sim folder
+This module is in compare_sim/IR_graph/check_IRs_similarity.py.
 
 ### Data
 This folder contains the data we used for experiments. This include cross-compiling-optimization-level, cross-compilers, corss-versions, and cross-ollvm-flags.
@@ -37,7 +37,7 @@ This generates a IR_output1.txt and a IR_output1_simplified.pickle for each func
 
 
 ##### Graph Diffing
-3. Run ```python compare_sim/IR_graphcheck_IRs_similarity.py``` and input two binaries you want to check similarity against each other. This will output a sim.txt file under each function folder. 
+3. Run ```python compare_sim/IR_graph/check_IRs_similarity.py``` and input two binaries you want to check similarity against each other. This will output a sim.txt file under each function folder. 
 Then extract functions with at least 5 blocks (If you have Asm2vec, you can extract the same functions as Asm2vec through copy_same_files function in compare_sim/check_output/).
 
 4. Lastly, check precision@1 score by running main function in compare_sim/check_output/ .
