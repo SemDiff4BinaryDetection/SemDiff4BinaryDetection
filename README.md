@@ -58,9 +58,9 @@ analyzed them. For each function, we read
 each assembly instruction line and check the correctness of their
 symbolic expressions in order to check the correctness of the key
 expressions. The result shows that 85% of the key expressions are
-correct. 
+correct. For the failure causes, please refer to our paper.
 
-Result Analysis: The incorrectness were due to two aspects: 1) the lack of
+<!--Result Analysis: The incorrectness were due to two aspects: 1) the lack of
 support of some x64 mnemonics’ variants. For example, mov and
 movzx both move the value into a register or a memory address
 where the former mnemonic directly moves the value while the
@@ -75,12 +75,13 @@ names into the contents of the string. For example, SemDiff resolves
 string variable address from instruction mov esi, address into
 “Rtmin” that address points to. However, in some cases, IDA pro
 may consider constant value as memory address and resolve the
-content at that memory address.
+content at that memory address.-->
 
 #### Experiment 2: Similarity Quantification Cross Compiling Optimization, Compilers, and Obfuscations
 ##### Experiment 2.1: Similarity Quantification in Cross-GCC-Compiling-Optimization-Level
 ![plot](/figs/gcc.jpg)
 ![plot](/figs/gcc_extra.jpg)
+
 In this experiment, we compile the same dataset with the same compiler 
 with different optimizaiton levels.
 In all the pairs of GCC optimization levels, SemDiff outperforms
@@ -103,7 +104,7 @@ score even though SemDiff has close results. On average, SemDiff
 outperforms all other tools in the 5 pairs of CLANG and GCC
 optimization levels.
 
-For binaries compiled from the same source code using different
+<!--For binaries compiled from the same source code using different
 optimization levels in Section 5.2.1 or different compilers in Sec-
 tion 5.2.2, their function numbers vary significantly mainly due to
 the inline functions. Also, they are likely to differ in almost all 
@@ -142,7 +143,7 @@ values still differs enormously. 3) Sometimes, the unfolded loop and
 the folded loop can be difficult to match. Because their symbolic
 expressions can differ. And the number does not match (i.e., un-
 folded loop only exists once while unfolded loop can exists more
-than once).
+than once).-->
 
 ##### Experiment 2.3: Similarity Quantification in Different Obfuscation Options
 ![plot](/figs/obfuscate.jpg)
@@ -155,7 +156,7 @@ Palmtree) for similarity quantification. The results are shown in
 Table 8. Clearly, SemDiff outperforms the other two tools for all
 obfuscation options with large margin.
 
-Result Analysis: In this ecperiment, we speculate that although
+<!--Result Analysis: In this ecperiment, we speculate that although
 the obfuscation options obfuscate a binary in terms of its syntactic
 structures, they retain its key semantics, which can be retrieved
 by SemDiff For the three evaluated tools, their generated scores
@@ -164,7 +165,7 @@ options. This is probably because the SUB option does not change
 the control flow. Of the three options, scores in the FLA option
 are the lowest, as it introduces more syntactical and control-flow
 changes by flattening the control flow. The failure causes remains
-the same as previously discussed.
+the same as previously discussed.-->
 
 #### Experiment 3: Applications of SemDiff
 
@@ -184,7 +185,7 @@ be captured by tools that rely on syntactic and structural features.
 When the version difference becomes larger in other programs,
 SemDiff performs the best.
 
-Result Analysis: We note that all the 6 tools achieve higher scores compared to
+<!--Result Analysis: We note that all the 6 tools achieve higher scores compared to
 experiments in Section 5.2.1 and Section 5.2.2, which can be attrib-
 uted to two possible reasons. First, most functions in a program
 of different versions can be the same, and only a small number
@@ -195,7 +196,7 @@ similarities than previous cross-compiling-optimization-level and
 cross-compiler. The reasons for the failure cases in this experiment
 are also mainly due to lack of support for rare mnemonics, replacing
 calls to equivalent instructions, and difficulty to precisely match
-loops.
+loops.-->
 
 ##### Experiment 3.2: Vulnerability Search
 ![plot](/figs/cve.jpg)
@@ -217,7 +218,7 @@ vulnerable function at the first place in the mixed functions (i.e.,
 top-1 score). The result is shown in Table 9. Asm2vec’s top-1 score
 is 9 out of 18 (50%) while SemDiff is 10 out of 18 (55.6%).
 
-Result Analysis: We manually analyzed the CVEs where SemDiff fails to identify
+<!--Result Analysis: We manually analyzed the CVEs where SemDiff fails to identify
 (rank at the first place). We found that out of 8 failure cases, in 6
 cases (75%) SemDiff ranked the vulnerable function before 10th
 place. This still indicates the effectiveness of using SemDiff to find
@@ -225,7 +226,7 @@ vulnerabilities. For the other 2 failure cases, one is due to IDA pro
 failed to identify the indirect jump addresses thus made SemDiff
 ineffective. Another was due to lack of support for less frequent
 mnemonics, which negatively impact the semantic information
-extraction thus decreased the accuracy.
+extraction thus decreased the accuracy.-->
 
 <!--
 **SemDiff4BinaryDetection/SemDiff4BinaryDetection** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
