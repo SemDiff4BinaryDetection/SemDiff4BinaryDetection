@@ -82,7 +82,7 @@ content at that memory address.-->
 ![plot](/figs/gcc.jpg)
 ![plot](/figs/gcc_extra.jpg)
 
-In this experiment, we compile the same dataset with the same compiler 
+In this experiment, we compile the same dataset with the same compiler (GCC) 
 with different optimizaiton levels.
 In all the pairs of GCC optimization levels, SemDiff outperforms
 all other tools on average. SemDiff has the highest scores generally. 
@@ -96,13 +96,13 @@ high similarity.
 ![plot](/figs/clang.jpg)
 ![plot](/figs/clang_extra.jpg)
 
-In this experiment, we compile the same dataset with the different compilers
+In this experiment, we compile the same dataset with the different compilers (CLANG and GCC)
 with same optimizaiton levels. The results in Table 6 show that SemDiff achieves
 the best detection performance on average. For the cases where
 SemDiff performs less well, Asm2vec achieves the best precision@1
 score even though SemDiff has close results. On average, SemDiff
 outperforms all other tools in the 5 pairs of CLANG and GCC
-optimization levels.
+optimization levels. For more detailed result analysis please refer to our paper.
 
 <!--For binaries compiled from the same source code using different
 optimization levels in Section 5.2.1 or different compilers in Sec-
@@ -154,7 +154,7 @@ one obfuscation option. We then fed each pair into SemDiff and
 two representative machine-learning-based tools (i.e., Gemini and
 Palmtree) for similarity quantification. The results are shown in
 Table 8. Clearly, SemDiff outperforms the other two tools for all
-obfuscation options with large margin.
+obfuscation options with large margin. For more detailed result analysis please refer to our paper.
 
 <!--Result Analysis: In this ecperiment, we speculate that although
 the obfuscation options obfuscate a binary in terms of its syntactic
@@ -171,7 +171,7 @@ the same as previously discussed.-->
 
 ##### Experiment 3.1: Similarity Quantification in Cross-Program-Version
 ![plot](/figs/versions.jpg)
-
+In this experiment, we compile the project from different versions, with the same optimization level and compiler (GCC).
 Particularly, SemDiff achieves the best detection performance
 in 10 programs and ranks second in the remaining 3 programs,
 i.e., coreutils, libgmp, and sqlite3. For both coreutils and sqlite3,
@@ -183,7 +183,7 @@ of the 10 programs, it indicates that the versions in these programs
 have more similarities in syntactic structures, which are easier to
 be captured by tools that rely on syntactic and structural features.
 When the version difference becomes larger in other programs,
-SemDiff performs the best.
+SemDiff performs the best. For more detailed result analysis please refer to our paper.
 
 <!--Result Analysis: We note that all the 6 tools achieve higher scores compared to
 experiments in Section 5.2.1 and Section 5.2.2, which can be attrib-
@@ -216,7 +216,7 @@ only a few other functions in total, we mix all the functions in that
 We check the probability of the tool successfully ranking the target
 vulnerable function at the first place in the mixed functions (i.e.,
 top-1 score). The result is shown in Table 9. Asm2vec’s top-1 score
-is 9 out of 18 (50%) while SemDiff is 10 out of 18 (55.6%).
+is 9 out of 18 (50%) while SemDiff is 10 out of 18 (55.6%). For more detailed result analysis please refer to our paper.
 
 <!--Result Analysis: We manually analyzed the CVEs where SemDiff fails to identify
 (rank at the first place). We found that out of 8 failure cases, in 6
