@@ -46,26 +46,49 @@ Then extract functions with at least 5 blocks (If you have Asm2vec, you can extr
 ### Experiment Results
 Due to the paper page limitation, we show the complete experiment results here. 
 
-#### Correctness of Key Expressions
+#### Experiment 1: Correctness of Key Expressions
+![plot](/figs/correctness.jpg)
+To justify the correctness of the translated key expressions, we
+randomly selected 200 functions from the projects described in
+Section 5 and manually analyzed them. For each function, we read
+each assembly instruction line and check the correctness of their
+symbolic expressions in order to check the correctness of the key
+expressions. The result shows that 85% of the key expressions are
+correct. The incorrectness were due to two aspects: 1) the lack of
+support of some x64 mnemonics’ variants. For example, mov and
+movzx both move the value into a register or a memory address
+where the former mnemonic directly moves the value while the
+latter one further zero extend the value if the value has less bits
+than the register or the memory address. Since mnemonics like
+movzx are rarely observed in the projects, we did not support them
+in the current version of SemDiff. Rather, we address movzx as mov,
+which can cause subtle inaccuracy in the symbolic expression. 2)
+Sometimes the IDA pro that SemDiff depends on can mistakenly
+resolve strings. We designed SemDiff to resolve strings variables
+names into the contents of the string. For example, SemDiff resolves
+string variable address from instruction mov esi, address into
+“Rtmin” that address points to. However, in some cases, IDA pro
+may consider constant value as memory address and resolve the
+content at that memory address.
 
-#### Similarity Quantification Cross Compiling Optimization, Compilers, and Obfuscations
-##### Similarity Quantification in Cross-GCC-Compiling-Optimization-Level
+#### Experiment 2: Similarity Quantification Cross Compiling Optimization, Compilers, and Obfuscations
+##### Experiment 2.1: Similarity Quantification in Cross-GCC-Compiling-Optimization-Level
 ![plot](/figs/gcc.jpg)
 ![plot](/figs/gcc_extra.jpg)
 
-##### Similarity Quantification in Cross-Compiler.
+##### Experiment 2.2: Similarity Quantification in Cross-Compiler.
 ![plot](/figs/clang.jpg)
 ![plot](/figs/clang_extra.jpg)
 
-##### Similarity Quantification in Different Obfuscation Options
+##### Experiment 2.3: Similarity Quantification in Different Obfuscation Options
 ![plot](/figs/obfuscate.jpg)
 
-#### Applications of SemDiff
+#### Experiment 3: Applications of SemDiff
 
-##### Similarity Quantification in Cross-Program-Version
+##### Experiment 3.1: Similarity Quantification in Cross-Program-Version
 ![plot](/figs/versions.jpg)
 
-##### Vulnerability Search
+##### Experiment 3.2: Vulnerability Search
 ![plot](/figs/cve.jpg)
 <!--
 **SemDiff4BinaryDetection/SemDiff4BinaryDetection** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
