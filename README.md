@@ -43,15 +43,31 @@ Then extract functions with at least 5 blocks (If you have Asm2vec, you can extr
 4. Lastly, check precision@1 score by running main function in compare_sim/check_output/ .
  
  
-###Experiment Results
+### Experiment Results
 Due to the paper page limitation, we show the complete experiment results here. 
 
-####Correctness of Key Expressions
+#### Correctness of Key Expressions
 
-####Similarity Quantification Cross Compiling Optimization, Compilers, and Obfuscations
+#### Similarity Quantification Cross Compiling Optimization, Compilers, and Obfuscations
+##### Similarity Quantification in Cross-GCC-Compiling-Optimization-
+Level.
 ![plot](/figs/gcc.jpg)
+![plot](/figs/gcc_extra.jpg)
 
-####Applications of SemDiff
+##### Similarity Quantification in Cross-Compiler.
+![plot](/figs/clang.jpg)
+![plot](/figs/clang_extra.jpg)
+
+##### Similarity Quantification in Different Obfuscation Options
+![plot](/figs/obfuscate.jpg)
+
+#### Applications of SemDiff
+
+##### Similarity Quantification in Cross-Program-Version
+![plot](/figs/versions.jpg)
+
+##### Vulnerability Search
+![plot](/figs/cve.jpg)
 <!--
 **SemDiff4BinaryDetection/SemDiff4BinaryDetection** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
