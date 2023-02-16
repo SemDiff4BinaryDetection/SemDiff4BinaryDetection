@@ -49,8 +49,7 @@ Due to the paper page limitation, we show the complete experiment results here.
 #### Correctness of Key Expressions
 
 #### Similarity Quantification Cross Compiling Optimization, Compilers, and Obfuscations
-##### Similarity Quantification in Cross-GCC-Compiling-Optimization-
-Level.
+##### Similarity Quantification in Cross-GCC-Compiling-Optimization-Level
 ![plot](/figs/gcc.jpg)
 ![plot](/figs/gcc_extra.jpg)
 
