@@ -54,7 +54,7 @@ coreutils-8.32, ImageMagick-7.1.010, libgmp-6.2.1, curl-7.80, sqlite3-
 
 To justify the correctness of the translated key expressions, we
 randomly selected 200 functions from the dataset and manually 
-analyzed them. For each function, we read
+analyzed them. The figure records our analyzed data. For each function, we read
 each assembly instruction line and check the correctness of their
 symbolic expressions in order to check the correctness of the key
 expressions. The result shows that 85% of the key expressions are
@@ -83,7 +83,10 @@ content at that memory address.-->
 ![plot](/figs/gcc_extra.jpg)
 
 In this experiment, we compile the same dataset with the same compiler (GCC) 
-with different optimizaiton levels.
+with different optimizaiton levels (O0,O1,O3,Os). And we select different 
+pairs for similarity comparison. For example, GCC O1 vs. O0 means we compare 
+the two binaries, one compiled using O1 and another compiled using O0.
+The figures shows the similarity score we abtain by using different tools.
 In all the pairs of GCC optimization levels, SemDiff outperforms
 all other tools on average. SemDiff has the highest scores generally. 
 For the programs where SemDiff performs less well,
@@ -97,7 +100,10 @@ high similarity.
 ![plot](/figs/clang_extra.jpg)
 
 In this experiment, we compile the same dataset with the different compilers (CLANG and GCC)
-with same optimizaiton levels. The results in Table 6 show that SemDiff achieves
+with same optimizaiton levels (O0,O1,O3,Os). And we select different 
+pairs for similarity comparison. For example, CLANG O1 vs. GCC O0 means we compare 
+the two binaries, one compiled using CLANG O1 and another compiled using GCC O0. 
+The results in Table 6 show that SemDiff achieves
 the best detection performance on average. For the cases where
 SemDiff performs less well, Asm2vec achieves the best precision@1
 score even though SemDiff has close results. On average, SemDiff
@@ -171,7 +177,8 @@ the same as previously discussed.-->
 
 ##### Experiment 3.1: Similarity Quantification in Cross-Program-Version
 ![plot](/figs/versions.jpg)
-In this experiment, we compile the project from different versions, with the same optimization level and compiler (GCC).
+In this experiment, we compile the project from different versions,
+with the same optimization level and compiler (GCC).
 Particularly, SemDiff achieves the best detection performance
 in 10 programs and ranks second in the remaining 3 programs,
 i.e., coreutils, libgmp, and sqlite3. For both coreutils and sqlite3,
