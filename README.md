@@ -50,7 +50,7 @@ coreutils-8.32, ImageMagick-7.1.010, libgmp-6.2.1, curl-7.80, sqlite3-
 3.37.0, zlib-1.2.11 and Puttygen-0.7.
 
 #### Experiment 1: Correctness of Key Expressions
-![plot](/figs/correctness.jpg)
+![plot](/fig/correctness.jpg)
 
 To justify the correctness of the translated key expressions, we
 randomly selected 200 functions from the dataset and manually 
@@ -79,8 +79,8 @@ content at that memory address.-->
 
 #### Experiment 2: Similarity Quantification Cross Compiling Optimization, Compilers, and Obfuscations
 ##### Experiment 2.1: Similarity Quantification in Cross-GCC-Compiling-Optimization-Level
-![plot](/figs/gcc.jpg)
-![plot](/figs/gcc_extra.jpg)
+![plot](/fig/gcc.jpg)
+![plot](/fig/gcc_extra.jpg)
 
 In this experiment, we compile the same dataset with the same compiler (GCC) 
 with different optimizaiton levels (O0,O1,O3,Os). And we select different 
@@ -96,8 +96,8 @@ that SemDiff rates these functions across optimization levels to
 high similarity.
 
 ##### Experiment 2.2: Similarity Quantification in Cross-Compiler.
-![plot](/figs/clang.jpg)
-![plot](/figs/clang_extra.jpg)
+![plot](/fig/clang.jpg)
+![plot](/fig/clang_extra.jpg)
 
 In this experiment, we compile the same dataset with the different compilers (CLANG and GCC)
 with same optimizaiton levels (O0,O1,O3,Os). And we select different 
@@ -152,7 +152,7 @@ folded loop only exists once while unfolded loop can exists more
 than once).-->
 
 ##### Experiment 2.3: Similarity Quantification in Different Obfuscation Options
-![plot](/figs/obfuscate.jpg)
+![plot](/fig/obfuscate.jpg)
 
 For each program, we generate three pairs and each pair consists
 of a CLANG-compiled binary and an OLLVM-compiled binary with
@@ -176,8 +176,8 @@ the same as previously discussed.-->
 #### Experiment 3: Applications of SemDiff
 
 ##### Experiment 3.1: Similarity Quantification in Cross-Program-Version
-![plot](/figs/versions.jpg)
-![plot](/figs/versions_extra.jpg)
+![plot](/fig/versions.jpg)
+![plot](/fig/versions_extra.jpg)
 
 In this experiment, we compile the project from different versions,
 with the same optimization level and compiler (GCC). For example, 
@@ -211,7 +211,7 @@ calls to equivalent instructions, and difficulty to precisely match
 loops.-->
 
 ##### Experiment 3.2: Vulnerability Search
-![plot](/figs/cve.jpg)
+![plot](/fig/cve.jpg)
 
 We randomly selected 18 Common Vulnerabilities and Exposures
 (CVEs) functions and detect their similar vulnerable functions. For
