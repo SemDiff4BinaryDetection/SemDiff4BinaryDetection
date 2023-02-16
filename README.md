@@ -177,6 +177,7 @@ the same as previously discussed.-->
 
 ##### Experiment 3.1: Similarity Quantification in Cross-Program-Version
 ![plot](/figs/versions.jpg)
+![plot](/figs/versions_extra.jpg)
 
 In this experiment, we compile the project from different versions,
 with the same optimization level and compiler (GCC). For example, 
