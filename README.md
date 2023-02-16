@@ -50,7 +50,7 @@ coreutils-8.32, ImageMagick-7.1.010, libgmp-6.2.1, curl-7.80, sqlite3-
 3.37.0, zlib-1.2.11 and Puttygen-0.7.
 
 #### Experiment 1: Correctness of Key Expressions
-![plot](fig/correctness.jpg)
+![](fig/correctness.jpg)
 
 To justify the correctness of the translated key expressions, we
 randomly selected 200 functions from the dataset and manually 
