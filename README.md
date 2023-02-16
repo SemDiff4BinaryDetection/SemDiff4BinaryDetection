@@ -77,20 +77,146 @@ content at that memory address.
 ![plot](/figs/gcc.jpg)
 ![plot](/figs/gcc_extra.jpg)
 
+In all the pairs of GCC optimization levels, SemDiff outperforms
+all other tools on average. Due to the page limit, the experimental
+results of three pairs are shown in Table 5. For more experiment
+results please refer to our Github repository. Similar to the results
+in the table, SemDiff has the highest scores for no less than 10
+programs in the remaining two pairs (i.e., GCC 𝑂3 vs. 𝑂1 and GCC
+𝑂𝑠 vs. 𝑂1). For the programs where SemDiff performs less well,
+Asm2vec has the highest precision@1 score while SemDiff ranks
+some ground-truth functions at positions from 2 to 10, indicating
+that SemDiff rates these functions across optimization levels to
+high similarity.
+
 ##### Experiment 2.2: Similarity Quantification in Cross-Compiler.
 ![plot](/figs/clang.jpg)
 ![plot](/figs/clang_extra.jpg)
 
+For binaries compiled from the same source code using different
+optimization levels in Section 5.2.1 or different compilers in Sec-
+tion 5.2.2, their function numbers vary significantly mainly due to
+the inline functions. Also, they are likely to differ in almost all 
+the assembly functions as some instructions inside a function have
+syntactic differences but the same semantics. These differences
+will result in different function attributes such as the statistics of
+basic blocks, instructions and mnemonics. Thus methods relies on
+syntactic information (all except SemDiff) are less accurate. How-
+ever, most key semantics of a function is still preserved in this case,
+making SemDiff more effective than other tools.
+
+For the experiments in Section 5.2 and Section 5.2.2, we suspect
+SemDiff can abstract higher level of semantic information into key
+expression from the plain assembly instruction and the LSH hashing
+can effectively compare the two key-semantic graphs with both
+topological and semantic information. Therefore SemDiff achieves
+the best results. In comparison, all other tools directly take the
+assembly code as the input, which can contain more noise with
+obscure semantic information thus decreases the results.
+
+To understand the root cause of the failure cases of SemDiff, we
+manually analyzed the results and found that in experiments Sec-
+tion 5.2 and Section 5.2.2, when SemDiff failed to rank the ground
+truth similar function at the first place, in approximately 50% of
+the cases, SemDiff still rank the similar function before 10th place.
+We consider this still can assistant find similar functions efficiently,
+with some extra minor manual analysis. In the other 50% cases,
+SemDiff failed to rank similar function at front positions mainly
+due to three reasons: 1) Lack of support for some less frequent
+mnemonics such as cvtss2sd. This can negatively impact the se-
+mantic information extraction thus decrease accuracy. 2) Some calls
+are optimized into other instructions. For example, call strlen
+be replaced to repne scasb, which has the same impact and output
+with call strlen. Even using symbolic execution, their symbolic
+values still differs enormously. 3) Sometimes, the unfolded loop and
+the folded loop can be difficult to match. Because their symbolic
+expressions can differ. And the number does not match (i.e., un-
+folded loop only exists once while unfolded loop can exists more
+than once).
+
 ##### Experiment 2.3: Similarity Quantification in Different Obfuscation Options
 ![plot](/figs/obfuscate.jpg)
+
+For each program, we generate three pairs and each pair consists
+of a CLANG-compiled binary and an OLLVM-compiled binary with
+one obfuscation option. We then fed each pair into SemDiff and
+two representative machine-learning-based tools (i.e., Gemini and
+Palmtree) for similarity quantification. The results are shown in
+Table 8. Clearly, SemDiff outperforms the other two tools for all
+obfuscation options with large margin.
+
+For the experiment in Section 5.2.3, we speculate that although
+the obfuscation options obfuscate a binary in terms of its syntactic
+structures, they retain its key semantics, which can be retrieved
+by SemDiff For the three evaluated tools, their generated scores
+under the SUB option achieve the highest compared to the other
+options. This is probably because the SUB option does not change
+the control flow. Of the three options, scores in the FLA option
+are the lowest, as it introduces more syntactical and control-flow
+changes by flattening the control flow. The failure causes remains
+the same as previously discussed.
 
 #### Experiment 3: Applications of SemDiff
 
 ##### Experiment 3.1: Similarity Quantification in Cross-Program-Version
 ![plot](/figs/versions.jpg)
 
+Particularly, SemDiff achieves the best detection performance
+in 10 programs and ranks second in the remaining 3 programs,
+i.e., coreutils, libgmp, and sqlite3. For both coreutils and sqlite3,
+SemDiff’s averaged score is only 0.01 lower than that of Bindiff. For
+libgmp, SemDiff’s score is only 0.03 lower than that of Asm2vec. A
+possible reason why SemDiff performs less well in the 3 programs
+is: as the version difference in the 3 programs is smaller than that
+of the 10 programs, it indicates that the versions in these programs
+have more similarities in syntactic structures, which are easier to
+be captured by tools that rely on syntactic and structural features.
+When the version difference becomes larger in other programs,
+SemDiff performs the best.
+We note that all the 6 tools achieve higher scores compared to
+experiments in Section 5.2.1 and Section 5.2.2, which can be attrib-
+uted to two possible reasons. First, most functions in a program
+of different versions can be the same, and only a small number
+of functions are different. Second, for a function that is updated
+in different versions, most of its function code remains the same
+and thus cross-program-version has more syntactic and structural
+similarities than previous cross-compiling-optimization-level and
+cross-compiler. The reasons for the failure cases in this experiment
+are also mainly due to lack of support for rare mnemonics, replacing
+calls to equivalent instructions, and difficulty to precisely match
+loops.
+
 ##### Experiment 3.2: Vulnerability Search
 ![plot](/figs/cve.jpg)
+
+An important application of binary
+code similarity detection is to find similar vulnerable functions.
+We randomly selected 18 Common Vulnerabilities and Exposures
+(CVEs) functions and detect their similar vulnerable functions. For
+each vulnerable function, we randomly select a vulnerable version
+of it as the reference that the tool tries to find similar functions to.
+We also prepare another randomly selected vulnerable version of
+the function that compiled with random compiling settings (i.e.,
+either O0, O1, O2, O3, Os) as the target function that the tools should
+detect them as similar to the reference function. Since usually the
+vulnerable function is absent in the project’s main binary (e.g., curl)
+and resides in the .o file (e.g., libcurl_la-mprintf.o) that contains
+only a few other functions in total, we mix all the functions in that
+.o file together with all the functions in the project’s main binary.
+We check the probability of the tool successfully ranking the target
+vulnerable function at the first place in the mixed functions (i.e.,
+top-1 score). The result is shown in Table 9. Asm2vec’s top-1 score
+is 9 out of 18 (50%) while SemDiff is 10 out of 18 (55.6%).
+We manually analyzed the CVEs where SemDiff fails to identify
+(rank at the first place). We found that out of 8 failure cases, in 6
+cases (75%) SemDiff ranked the vulnerable function before 10th
+place. This still indicates the effectiveness of using SemDiff to find
+vulnerabilities. For the other 2 failure cases, one is due to IDA pro
+failed to identify the indirect jump addresses thus made SemDiff
+ineffective. Another was due to lack of support for less frequent
+mnemonics, which negatively impact the semantic information
+extraction thus decreased the accuracy.
+
 <!--
 **SemDiff4BinaryDetection/SemDiff4BinaryDetection** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
