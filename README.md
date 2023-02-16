@@ -48,6 +48,7 @@ Due to the paper page limitation, we show the complete experiment results here.
 
 #### Experiment 1: Correctness of Key Expressions
 ![plot](/figs/correctness.jpg)
+
 To justify the correctness of the translated key expressions, we
 randomly selected 200 functions from the projects described in
 Section 5 and manually analyzed them. For each function, we read
