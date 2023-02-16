@@ -45,17 +45,22 @@ Then extract functions with at least 5 blocks (If you have Asm2vec, you can extr
  
 ### Experiment Results
 Due to the paper page limitation, we show the complete experiment results here. 
+Our dataset for experiment include openssl-3.3.0, libtomcrypt-1.18.2,
+coreutils-8.32, ImageMagick-7.1.010, libgmp-6.2.1, curl-7.80, sqlite3-
+3.37.0, zlib-1.2.11 and Puttygen-0.7.
 
 #### Experiment 1: Correctness of Key Expressions
 ![plot](/figs/correctness.jpg)
 
 To justify the correctness of the translated key expressions, we
-randomly selected 200 functions from the projects described in
-Section 5 and manually analyzed them. For each function, we read
+randomly selected 200 functions from the dataset and manually 
+analyzed them. For each function, we read
 each assembly instruction line and check the correctness of their
 symbolic expressions in order to check the correctness of the key
 expressions. The result shows that 85% of the key expressions are
-correct. The incorrectness were due to two aspects: 1) the lack of
+correct. 
+
+Result Analysis: The incorrectness were due to two aspects: 1) the lack of
 support of some x64 mnemonics’ variants. For example, mov and
 movzx both move the value into a register or a memory address
 where the former mnemonic directly moves the value while the
@@ -76,14 +81,11 @@ content at that memory address.
 ##### Experiment 2.1: Similarity Quantification in Cross-GCC-Compiling-Optimization-Level
 ![plot](/figs/gcc.jpg)
 ![plot](/figs/gcc_extra.jpg)
-
+In this experiment, we compile the same dataset with the same compiler 
+with different optimizaiton levels.
 In all the pairs of GCC optimization levels, SemDiff outperforms
-all other tools on average. Due to the page limit, the experimental
-results of three pairs are shown in Table 5. For more experiment
-results please refer to our Github repository. Similar to the results
-in the table, SemDiff has the highest scores for no less than 10
-programs in the remaining two pairs (i.e., GCC 𝑂3 vs. 𝑂1 and GCC
-𝑂𝑠 vs. 𝑂1). For the programs where SemDiff performs less well,
+all other tools on average. SemDiff has the highest scores generally. 
+For the programs where SemDiff performs less well,
 Asm2vec has the highest precision@1 score while SemDiff ranks
 some ground-truth functions at positions from 2 to 10, indicating
 that SemDiff rates these functions across optimization levels to
@@ -92,6 +94,14 @@ high similarity.
 ##### Experiment 2.2: Similarity Quantification in Cross-Compiler.
 ![plot](/figs/clang.jpg)
 ![plot](/figs/clang_extra.jpg)
+
+In this experiment, we compile the same dataset with the different compilers
+with same optimizaiton levels. The results in Table 6 show that SemDiff achieves
+the best detection performance on average. For the cases where
+SemDiff performs less well, Asm2vec achieves the best precision@1
+score even though SemDiff has close results. On average, SemDiff
+outperforms all other tools in the 5 pairs of CLANG and GCC
+optimization levels.
 
 For binaries compiled from the same source code using different
 optimization levels in Section 5.2.1 or different compilers in Sec-
@@ -105,7 +115,7 @@ syntactic information (all except SemDiff) are less accurate. How-
 ever, most key semantics of a function is still preserved in this case,
 making SemDiff more effective than other tools.
 
-For the experiments in Section 5.2 and Section 5.2.2, we suspect
+Result Analysis: For the experiments in Section 5.2 and Section 5.2.2, we suspect
 SemDiff can abstract higher level of semantic information into key
 expression from the plain assembly instruction and the LSH hashing
 can effectively compare the two key-semantic graphs with both
@@ -145,7 +155,7 @@ Palmtree) for similarity quantification. The results are shown in
 Table 8. Clearly, SemDiff outperforms the other two tools for all
 obfuscation options with large margin.
 
-For the experiment in Section 5.2.3, we speculate that although
+Result Analysis: In this ecperiment, we speculate that although
 the obfuscation options obfuscate a binary in terms of its syntactic
 structures, they retain its key semantics, which can be retrieved
 by SemDiff For the three evaluated tools, their generated scores
@@ -173,7 +183,8 @@ have more similarities in syntactic structures, which are easier to
 be captured by tools that rely on syntactic and structural features.
 When the version difference becomes larger in other programs,
 SemDiff performs the best.
-We note that all the 6 tools achieve higher scores compared to
+
+Result Analysis: We note that all the 6 tools achieve higher scores compared to
 experiments in Section 5.2.1 and Section 5.2.2, which can be attrib-
 uted to two possible reasons. First, most functions in a program
 of different versions can be the same, and only a small number
@@ -189,8 +200,6 @@ loops.
 ##### Experiment 3.2: Vulnerability Search
 ![plot](/figs/cve.jpg)
 
-An important application of binary
-code similarity detection is to find similar vulnerable functions.
 We randomly selected 18 Common Vulnerabilities and Exposures
 (CVEs) functions and detect their similar vulnerable functions. For
 each vulnerable function, we randomly select a vulnerable version
@@ -207,7 +216,8 @@ We check the probability of the tool successfully ranking the target
 vulnerable function at the first place in the mixed functions (i.e.,
 top-1 score). The result is shown in Table 9. Asm2vec’s top-1 score
 is 9 out of 18 (50%) while SemDiff is 10 out of 18 (55.6%).
-We manually analyzed the CVEs where SemDiff fails to identify
+
+Result Analysis: We manually analyzed the CVEs where SemDiff fails to identify
 (rank at the first place). We found that out of 8 failure cases, in 6
 cases (75%) SemDiff ranked the vulnerable function before 10th
 place. This still indicates the effectiveness of using SemDiff to find
