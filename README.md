@@ -177,8 +177,12 @@ the same as previously discussed.-->
 
 ##### Experiment 3.1: Similarity Quantification in Cross-Program-Version
 ![plot](/figs/versions.jpg)
+
 In this experiment, we compile the project from different versions,
-with the same optimization level and compiler (GCC).
+with the same optimization level and compiler (GCC). For example, 
+1.0.2o vs. 3.0.0 means we compare similarity of two binaries. 
+One is compiled using version 1.0.2o, and another compiled using 
+version 3.0.0.
 Particularly, SemDiff achieves the best detection performance
 in 10 programs and ranks second in the remaining 3 programs,
 i.e., coreutils, libgmp, and sqlite3. For both coreutils and sqlite3,
