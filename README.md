@@ -8,8 +8,13 @@ This module include all the symbolic_engine folder, compare_sim/write_IR.py, and
 This module is in compare_sim/IR_graph/check_IRs_similarity.py.
 
 ### Data
-This folder contains the data we used for experiments. This include cross-compiling-optimization-level, cross-compilers, corss-versions, and cross-ollvm-flags.
+This folder contains the data we used for experiments. This include cross-compiling-optimization-level, cross-compilers, corss-versions, and cross-ollvm-flags. The specific data are: openssl-3.3.0, libtomcrypt-1.18.2,
+coreutils-8.32, ImageMagick-7.1.010, libgmp-6.2.1, curl-7.80, sqlite3-3.37.0, zlib-1.2.11
+and Puttygen-0.74. 
 
+In particular, Coreutils is compiled into about 150 binaries by default and we modify its build configuration to merge them into a single binary. 
+LibMagickCore and libMagickWand are from the Imagemagick project, while plink, pscp, psftp, and puttygen are from the Puttygen project. For libtomcrypt, we can compile it into a single ELF executable or a shared library. 
+ 
 ### Installation
 
 First of all, this is a plugin for IDA pro. Make sure you install IDA pro first. We implemented on IDA pro 7.5 SP3 in Windows. Thus this plugin works for this version.
