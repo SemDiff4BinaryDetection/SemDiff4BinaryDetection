@@ -13,7 +13,7 @@ coreutils-8.32, ImageMagick-7.1.010, libgmp-6.2.1, curl-7.80, sqlite3-3.37.0, zl
 and Puttygen-0.74. 
 
 In particular, Coreutils is compiled into about 150 binaries by default and we modify its build configuration to merge them into a single binary. 
-LibMagickCore and libMagickWand are from the Imagemagick project, while plink, pscp, psftp, and puttygen are from the Puttygen project. For libtomcrypt, we can compile it into a single ELF executable or a shared library. 
+LibMagickCore and libMagickWand are from the Imagemagick project, while plink, pscp, psftp, and puttygen are from the Puttygen project. For libtomcrypt, we can compiled it into a a shared library. 
  
 ### Installation
 
