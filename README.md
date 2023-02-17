@@ -54,6 +54,11 @@ Our dataset for experiment include openssl-3.3.0, libtomcrypt-1.18.2,
 coreutils-8.32, ImageMagick-7.1.010, libgmp-6.2.1, curl-7.80, sqlite3-
 3.37.0, zlib-1.2.11 and Puttygen-0.7.
 
+The calculation for an NCD score is as follows: $$NCD(x,y)=\dfrac{C(x\cdot y)-min(C(x),C(y))}{max(C(x),C(y))},$$
+%where $C(x)$ returns the compressed length of a binary $x$ in the unit of raw bytes. $x\cdot y$ denotes the concatenation of two binaries.
+%the ground truth difference. 
+%An NCD score is between 0.0 and 1.0, and a higher score for two binaries indicates that they are more dissimilar to each other. 
+
 #### Experiment 1: Correctness of Key Expressions
 ![plot](fig/correctness.jpg)
 
