@@ -89,8 +89,8 @@ content at that memory address.-->
 
 #### Experiment 2: Similarity Quantification Cross Compiling Optimization, Compilers, and Obfuscations
 ##### Experiment 2.1: Similarity Quantification in Cross-GCC-Compiling-Optimization-Level
-![plot](fig/gcc.jpg)
-![plot](fig/gcc_extra.jpg)
+![](fig/gcc.jpg)
+![](fig/gcc_extra.jpg)
 
 In this experiment, we compile the same dataset with the same compiler (GCC) 
 with different optimizaiton levels (O0,O1,O3,Os). And we select different 
