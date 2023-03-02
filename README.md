@@ -60,7 +60,7 @@ where $C(x)$ returns the compressed length of a binary $x$ in the unit of raw by
 An NCD score is between 0.0 and 1.0, and a higher score for two binaries indicates that they are more dissimilar to each other. 
 
 #### Experiment 1: Correctness of Key Expressions
-![plot](fig/correctness.jpg)
+![](fig/correctness.jpg)
 
 To justify the correctness of the translated key expressions, we
 randomly selected 200 functions from the dataset and manually 
@@ -106,8 +106,8 @@ that SemDiff rates these functions across optimization levels to
 high similarity.
 
 ##### Experiment 2.2: Similarity Quantification in Cross-Compiler.
-![plot](/fig/clang.jpg)
-![plot](/fig/clang_extra.jpg)
+![](/fig/clang.jpg)
+![](/fig/clang_extra.jpg)
 
 In this experiment, we compile the same dataset with the different compilers (CLANG and GCC)
 with same optimizaiton levels (O0,O1,O3,Os). And we select different 
@@ -162,7 +162,7 @@ folded loop only exists once while unfolded loop can exists more
 than once).-->
 
 ##### Experiment 2.3: Similarity Quantification in Different Obfuscation Options
-![plot](/fig/obfuscate.jpg)
+![](/fig/obfuscate.jpg)
 
 For each program, we generate three pairs and each pair consists
 of a CLANG-compiled binary and an OLLVM-compiled binary with
@@ -186,8 +186,8 @@ the same as previously discussed.-->
 #### Experiment 3: Applications of SemDiff
 
 ##### Experiment 3.1: Similarity Quantification in Cross-Program-Version
-![plot](/fig/versions.jpg)
-![plot](/fig/versions_extra.jpg)
+![](/fig/versions.jpg)
+![](/fig/versions_extra.jpg)
 
 In this experiment, we compile the project from different versions,
 with the same optimization level and compiler (GCC). For example, 
@@ -221,7 +221,7 @@ calls to equivalent instructions, and difficulty to precisely match
 loops.-->
 
 ##### Experiment 3.2: Vulnerability Search
-![plot](/fig/cve.jpg)
+![](/fig/cve.jpg)
 
 We randomly selected 18 Common Vulnerabilities and Exposures
 (CVEs) functions and detect their similar vulnerable functions. For
